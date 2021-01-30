@@ -81,10 +81,10 @@ namespace UCS.PacketProcessing.Messages.Client
                         if (badword)
                         {
                             var p = new GlobalChatLineMessage(level.GetClient());
-                            p.SetPlayerId(0);
-                            p.SetPlayerName("UCS Chat Filter System");
-                            p.SetLeagueId(22);
-                            p.SetChatMessage("DETECTED BAD WORD! PLEASE AVOID USING BAD WORDS!");
+                            p.SetPlayerId(avatar.GetId());
+                            p.SetPlayerName(avatar.GetAvatarName());
+                            p.SetLeagueId(avatar.GetLeagueId());
+                            p.SetChatMessage("*****");
                             PacketManager.ProcessOutgoingPacket(p);
                             return;
                         }
@@ -108,7 +108,7 @@ namespace UCS.PacketProcessing.Messages.Client
                     {
                         var p = new GlobalChatLineMessage(level.GetClient());
                         p.SetPlayerId(0);
-                        p.SetPlayerName("UCS Chat System");
+                        p.SetPlayerName("Global Chat System");
                         p.SetChatMessage(
                             "The Global Chat is currently disabled. Please try again later! For more Informations, check the Server Status!");
                         PacketManager.ProcessOutgoingPacket(p);
