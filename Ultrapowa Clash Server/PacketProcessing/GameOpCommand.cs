@@ -34,8 +34,8 @@ namespace UCS.PacketProcessing
             var p = new GlobalChatLineMessage(c);
             p.SetChatMessage("GameOp command failed. Insufficient privileges.");
             p.SetPlayerId(0);
-            p.SetLeagueId(2);
-            p.SetPlayerName("Ultrapowa Clash Server");
+            p.SetLeagueId(22);
+            p.SetPlayerName("System OpManager");
             PacketManager.ProcessOutgoingPacket(p);
         }
 
